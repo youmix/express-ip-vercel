@@ -5,7 +5,7 @@ const app = express();
 app.get("/", async (req, res) => {
     try {
       const response = await axios.get('https://api.ipify.org');
-      //console.log(response);
+      console.log(response);
       
       const ip = response.data;
       res.send(ip);
@@ -21,4 +21,4 @@ app.listen({ port: 3000 }, () => {
   });
   console.log('starts');
 
-//export default app;
+export default app;
