@@ -4,7 +4,7 @@ const app = express();
 
 app.get("/", async (req, res) => {
     try {
-      const response = await axios.get('https://api.ipify.org');
+      const response = await axios.get('https://dummyjson.com/products/1');
       console.log(response);
       
       const ip = response.data;
