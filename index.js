@@ -5,8 +5,9 @@ const app = express();
 app.get("/", async (req, res) => {
     try {
       const response = await axios.get('https://api.ipify.org');
-      console.log(response);
-      const ip = response.data;
+      //console.log(response);
+      let ip = req.header('x-forwarded-for');
+      let ip = response.data;
       res.send(ip);
     } catch (error) {
       console.error(error);
